@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Road Trip Playlist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🚗 Road Trip Playlist 🎵</h1>
+    <p class="tagline">Plan your route. Pick your tunes. Hit the road.</p>
+  </header>
+
+  <main class="container">
+    <!-- Trip details -->
+    <section class="card" aria-labelledby="trip-heading">
+      <h2 id="trip-heading">Trip Details</h2>
+      <form id="trip-form" class="form-grid">
+        <label>
+          Trip name
+          <input type="text" id="trip-name" placeholder="Summer Coast Run" required />
+        </label>
+        <label>
+          Start
+          <input type="text" id="trip-start" placeholder="San Francisco, CA" required />
+        </label>
+        <label>
+          Destination
+          <input type="text" id="trip-destination" placeholder="Los Angeles, CA" required />
+        </label>
+        <label>
+          Date
+          <input type="date" id="trip-date" />
+        </label>
+        <button type="submit" class="primary">Save Trip</button>
+      </form>
+      <p id="trip-summary" class="summary" aria-live="polite"></p>
+    </section>
+
+    <!-- Stops -->
+    <section class="card" aria-labelledby="stops-heading">
+      <h2 id="stops-heading">Stops Along the Way</h2>
+      <form id="stop-form" class="inline-form">
+        <input type="text" id="stop-input" placeholder="Add a stop (e.g. Big Sur)" required />
+        <button type="submit" class="primary">Add Stop</button>
+      </form>
+      <ol id="stop-list" class="item-list" aria-live="polite"></ol>
+      <p id="stop-empty" class="empty">No stops added yet.</p>
+    </section>
+
+    <!-- Playlist -->
+    <section class="card" aria-labelledby="playlist-heading">
+      <h2 id="playlist-heading">Playlist</h2>
+      <form id="song-form" class="inline-form">
+        <input type="text" id="song-title" placeholder="Song title" required />
+        <input type="text" id="song-artist" placeholder="Artist" required />
+        <button type="submit" class="primary">Add Song</button>
+      </form>
+      <ul id="song-list" class="item-list" aria-live="polite"></ul>
+      <p id="song-empty" class="empty">Your playlist is empty.</p>
+      <p id="song-count" class="summary"></p>
+    </section>
+
+    <div class="actions">
+      <button id="reset-btn" class="danger" type="button">Reset Trip</button>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <small>Data saved locally in your browser.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
